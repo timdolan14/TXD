@@ -9,8 +9,7 @@ const postSchema = new Schema(
 
         post: {
             type: String,
-            required: true,
-            trim: true
+            required: true
         },
 
         createdAt: {
@@ -33,7 +32,6 @@ const postSchema = new Schema(
                 comment: {
                     type: String,
                     required: true,
-                    trim: true,
                     minlength: 1,
                     maxlength: 30,
 

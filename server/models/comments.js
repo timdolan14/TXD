@@ -6,10 +6,10 @@ const commentSchema = new Schema(
     comment: {
       type: String,
       required: true,
-      trim: true,
       maxlength: 30,
 
     },
+    
     createdAt: {
       type: Date,
       default: Date.now,
