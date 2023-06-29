@@ -17,7 +17,6 @@ const Home = () => {
            <PostForm
               posts={post}
             />
-            
         </div>
     )
 }
