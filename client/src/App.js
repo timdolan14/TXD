@@ -32,8 +32,8 @@ function App() {
             <Router>
                 <Routes>
                     <Route path='/' element={<Register />} />
-                    <Route path='home' element={<Home />} />
-                    <Route path='login' element={<Login />} />
+                    <Route path='/home' element={<Home />} />
+                    <Route path='/login' element={<Login />} />
                 </Routes>
             </Router>
         </ApolloProvider>
