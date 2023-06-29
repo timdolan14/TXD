@@ -21,17 +21,9 @@
     "mongoose": "^7.2.4",
     "npm": "^9.7.2"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/timdolan14/TXD.git"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/timdolan14/TXD/issues"
-  },
-  "homepage": "https://github.com/timdolan14/TXD#readme",
   "devDependencies": {
     "concurrently": "^8.2.0"
   }
