@@ -31,9 +31,10 @@ export default function App() {
             <ApolloProvider client={client}>
                 <Router>
                     <Routes>
-                        <Route path='login' element={<Login />} />
-                        <Route path='home' element={<Home />} />
                         <Route path='/' element={<Register />} />
+                        <Route path='home' element={<Home />} />
+                        <Route path='login' element={<Login />} />
+                        <Route path='register' element={<Register />} />
                     </Routes>
                 </Router>
             </ApolloProvider>
