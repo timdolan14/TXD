@@ -24,5 +24,8 @@
   "homepage": "https://github.com/timdolan14/TXD#readme",
   "devDependencies": {
     "concurrently": "^8.2.0"
+  },
+  "dependencies": {
+    "npm": "^9.7.2"
   }
 }
