@@ -6,7 +6,7 @@ https://github.com/timdolan14/TXD
 ## Description
 
 ## How does it work?
-Our app utilizes advanced technologies like JavaScript, MERN Stack (MongoDB, Express.js, React.js, Node.js), GraphQL, and npm packages. By utilizing GraphQL, we efficiently manage user profiles and memories. React dynamically populates personalized pages for each user, while API routes are neatly organized using separate JavaScript files, ensuring clean code structure through proper GraphQL queries and mutations.
+Our app utilizes advanced technologies like JavaScript, MERN Stack (MongoDB, Express.js, React.js, Node.js), GraphQL, and npm packages. By utilizing GraphQL, we efficiently manage user profiles and posts. React dynamically populates personalized pages for each user, while API routes are neatly organized using separate JavaScript files, ensuring clean code structure through proper GraphQL queries and mutations.
 
 
 ## Dependencies
