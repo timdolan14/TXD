@@ -25,19 +25,17 @@ const client = new ApolloClient({
     cache: new InMemoryCache(),
 });
 
- function App() {
+function App() {
     return (
-        <>
             <ApolloProvider client={client}>
                 <Router>
                     <Routes>
-                        <Route path='/' element={<Home />} />
+                        <Route path='/home' element={<Home />} />
                         <Route path='/login' element={<Login />} />
                         <Route path='/register' element={<Register />} />
                     </Routes>
                 </Router>
             </ApolloProvider>
-        </>
     )
 }
 
