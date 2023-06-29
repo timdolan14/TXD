@@ -10,8 +10,8 @@ db.once('open', async () => {
     await User.deleteMany({});
     await User.create(userData);
 
-    for (let i = 0; i < postDataData.length; i++) {
-      const { _id, username } = await Post.create(postDataData[i]);
+    for (let i = 0; i < postData.length; i++) {
+      const { _id, username } = await Post.create(postData[i]);
       const user = await User.findOneAndUpdate(
         { username: username },
         {
