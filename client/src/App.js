@@ -25,7 +25,7 @@ const client = new ApolloClient({
     cache: new InMemoryCache(),
 });
 
-export default function App() {
+ function App() {
     return (
         <>
             <ApolloProvider client={client}>
@@ -40,3 +40,5 @@ export default function App() {
         </>
     )
 }
+
+export default App;
