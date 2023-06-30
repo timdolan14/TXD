@@ -1,9 +1,12 @@
 import React from 'react';
 import { useQuery } from "@apollo/client";
 
+import Dashboard from "../components/Dashboard";
 import PostForm from "../components/PostForm";
+import Post from "../components/Post";
 
 import { ALL_POSTS } from '../utils/queries';
+import Profile from './Profile';
 // import { useState } from 'react';
 
 const Home = () => {
@@ -13,10 +16,9 @@ const Home = () => {
 
     return (
         <div>
-            <h1>Test</h1>
-           <PostForm
-              posts={post}
-            />
+           <Dashboard/>
+           <Post/>
+           <PostForm/>
         </div>
     )
 }
