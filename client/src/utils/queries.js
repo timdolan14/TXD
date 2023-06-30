@@ -5,6 +5,7 @@ query ALL_POSTS {
     post {
       _id
       post
+      createdAt
     }
   }
   
@@ -19,6 +20,7 @@ query ALL_POSTS_BY_USER {
       post {
         _id
         post
+        createdAt
       }
     }
   }`
