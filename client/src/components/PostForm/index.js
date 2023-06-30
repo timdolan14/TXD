@@ -7,7 +7,7 @@ const PostForm = ({ posts }) => {
             {posts && posts.map((posts) => (
                 <div key={posts._id}>
                     <p>{posts.post}</p>
-                    <Link to={'Home'}>
+                    <Link to={"/home"}>
                     </Link>
                 </div>
 
