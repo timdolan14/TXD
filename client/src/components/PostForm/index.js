@@ -3,16 +3,15 @@ import { Link } from 'react-router-dom';
 
 const PostForm = ({ posts }) => {
     return (
+        <Link to={"/home"}>
         <div>
             {posts && posts.map((posts) => (
                 <div key={posts._id}>
                     <p>{posts.post}</p>
-                    <Link to={"/home"}>
-                    </Link>
                 </div>
-
             ))}
         </div>
+        </Link>
     )
 }
 
