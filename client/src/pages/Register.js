@@ -6,7 +6,7 @@ import { NEW_USER } from '../utils/mutations';
 
 import Auth from '../utils/auth';
 
-const Register = (props) => {
+const Register = () => {
     const [formState, setFormState] = useState({ email: '', username: '', password: '' });
     const [createUser, { error, data }] = useMutation(NEW_USER);
 
@@ -40,7 +40,7 @@ const Register = (props) => {
             )}
             <div className="bg-blue-50 h-screen flex justify-center items-center">
                 {data ? (
-                    <p> Success! You may now head back to the {' '} <Link to="/">HOMEPAGE.</Link> </p>
+                    <p> Success! You may now head back to the {' '} <Link to="/home">HOMEPAGE.</Link> </p>
                 ) : (
                     <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
                         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
@@ -55,7 +55,7 @@ const Register = (props) => {
                         </div>
 
                         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-                            <form onSubmit={handleFormSubmit} className="space-y-6" action="#" method="POST">
+                            <form onSubmit={handleFormSubmit} className="space-y-6">
                                 <div>
                                     <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
                                         Email address
@@ -112,7 +112,6 @@ const Register = (props) => {
                                         />
                                     </div>
                                 </div>
-
                                 <div>
                                     <button
                                         type="submit"

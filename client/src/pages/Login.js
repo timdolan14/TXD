@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
-import { LOGIN } from '../utils/mutations';
+import { LOGIN_USER } from '../utils/mutations';
 
 import Auth from '../utils/auth';
 
 const Login = (props) => {
     const [formState, setFormState] = useState({ username: '', password: '' });
-    const [login, { error, data }] = useMutation(LOGIN);
+    const [login, { error, data }] = useMutation(LOGIN_USER);
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -46,7 +46,7 @@ const Login = (props) => {
 
             <div className="bg-blue-50 h-screen flex justify-center items-center">
                 {data ? (
-                    <p> Success! You may now head back to the {' '} <Link to="/">HOMEPAGE.</Link> </p>
+                    <p> Success! You may now head back to the {' '} <Link to="/home">HOMEPAGE.</Link> </p>
                 ) : (
                     <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
                         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
@@ -106,6 +106,7 @@ const Login = (props) => {
                                 <div>
                                     <button
                                         type="submit"
+                                        style={{ cursor: 'pointer' }}
                                         className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
                                         Sign in
                                     </button>

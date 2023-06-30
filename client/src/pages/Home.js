@@ -1,9 +1,9 @@
 import React from 'react';
 import { useQuery } from "@apollo/client";
 
-import Dashboard from "../components/Dashboard";
+import Header from "../components/Header";
 import PostForm from "../components/PostForm";
-import Post from "../components/Post";
+import PostList from "../components/PostList";
 
 import { ALL_POSTS } from '../utils/queries';
 // import { useState } from 'react';
@@ -15,9 +15,12 @@ const Home = () => {
 
     return (
         <div>
-            <Dashboard />
-            <Post />
-            {post && post.map((post) => (<PostForm posts={post} />))}
+            <Header />
+            <PostForm />
+            <PostList
+              post={post}
+              title="Check this out!"
+            />
         </div>
     )
 }

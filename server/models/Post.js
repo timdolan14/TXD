@@ -3,13 +3,14 @@ const dateFormat = require('../utils/dateFormat');
 
 const postSchema = new Schema(
     {
-        userId: {
-            type: String,
-        },
-
         post: {
             type: String,
             required: true
+        },
+        postAuthor: {
+            type: String,
+            required: true,
+            trim: true,
         },
 
         createdAt: {
@@ -23,7 +24,7 @@ const postSchema = new Schema(
             default: 0,
 
         },
-        
+
         tag: [{
             type: String,
         }],
@@ -41,12 +42,11 @@ const postSchema = new Schema(
                     default: Date.now,
                     get: (timestamp) => dateFormat(timestamp)
                 },
-                commentAuthur: {
+                commentAuthor: {
                     type: String,
                     ref: `User`,
                     required: true,
                 }
-
             }
         ]
 

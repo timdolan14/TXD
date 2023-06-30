@@ -1,18 +1,18 @@
 import { useQuery } from '@apollo/client';
-import Dashboard from "../components/Dashboard";
+import Header from "../components/Header";
 
 
-import { ALL_POSTS_BY_USER } from '../utils/queries';
+import { SINGLE_POST } from '../utils/queries';
 import Auth from '../utils/auth';
 
 const Profile = () => {
 
-    const { loading, data } = useQuery(ALL_POSTS_BY_USER);
-    const memories = data?.memory || [];
+    const { loading, data } = useQuery(SINGLE_POST);
+    const memory = data?.memory || [];
 
     return (
         <div>
-            <Dashboard/>
+            <Header/>
         </div>
     )
 }

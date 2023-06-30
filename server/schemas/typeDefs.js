@@ -12,6 +12,7 @@ type User {
 type Post {
     _id: ID
     post: String
+    postAuthor: String
     likes: Boolean
     createdAt: String
     tag: String
@@ -31,20 +32,18 @@ type Post {
   }
 
   type Query {
-    user: [User]!
-    post: [Post]
+    users: [User]
+    user(username: String!): User
+    posts(username: String): [Post]
+    post(postId: ID!): Post
     postTag(tag: String): [Post]
     Post(PostId: ID!): Post
-    me: User
   }
 
   type Mutation {
     addUser(email: String! username: String!, password: String!): Auth
     login(username: String!, password: String!): Auth
-    addPost(post: String!): Post
-    addComment(PostId: ID!, commentText: String!): Post
-    removePost(PostId: ID!): Post
-    removeComment(PostId: ID!, commentId: ID!): Post
+    addPost(post: String!, postAuthor: String!): Post
   }
 `;
 

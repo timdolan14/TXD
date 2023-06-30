@@ -3,9 +3,15 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Auth from '../../utils/auth';
 
 
 const Dashboard = () => {
+
+  const logout = (event) => {
+    event.preventDefault();
+    Auth.logout();
+  };
 
   const user = {
     name: 'Tom Cook',
@@ -18,6 +24,7 @@ const Dashboard = () => {
     { name: 'Home', path: '/', current: true },
     { name: 'Profile', path: '/profile', current: false },
     { name: 'Notifications', path: '/notifications', current: false },
+    { name: 'Logout', path: '/login', current: false },
   ]
 
   const userNavigation = [
@@ -27,8 +34,9 @@ const Dashboard = () => {
   ]
 
   const noti = [
-    { name: 'Notifications', path: '/notifications', current: false },
+    { name: 'Notifications', path: '/notifications', current: false, key: 'notifications' },
   ]
+  
 
   function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -74,6 +82,7 @@ const Dashboard = () => {
                     <div className="ml-4 flex items-center md:ml-6">
                       {noti.map((item) => (
                         <Link
+                          key={item.name}
                           to={item.path}
                           className="rounded-full bg-gray-800 p-1 text-white hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                         >
@@ -83,7 +92,7 @@ const Dashboard = () => {
                       <Link to="/notifications">
                         <BellIcon className="text-white h-6 w-6" aria-hidden="true" />
                       </Link>
-                      
+
                       {/* Profile dropdown */}
                       <Menu as="div" className="relative ml-3">
                         <div>
@@ -181,6 +190,23 @@ const Dashboard = () => {
                         {item.name}
                       </Disclosure.Button>
                     ))}
+                    {Auth.loggedIn() ? (
+                      <>
+                        <span>Hey there, {Auth.getProfile().data.username}!</span>
+                        <button className="btn btn-lg btn-light m-2" onClick={logout}>
+                          Logout
+                        </button>
+                      </>
+                    ) : (
+                      <>
+                        <Link className="btn btn-lg btn-info m-2" to="/login">
+                          Login
+                        </Link>
+                        <Link className="btn btn-lg btn-light m-2" to="/signup">
+                          Signup
+                        </Link>
+                      </>
+                    )}
                   </div>
                 </div>
               </Disclosure.Panel>
