@@ -6,7 +6,6 @@ import PostForm from "../components/PostForm";
 import Post from "../components/Post";
 
 import { ALL_POSTS } from '../utils/queries';
-import Profile from './Profile';
 // import { useState } from 'react';
 
 const Home = () => {
@@ -16,9 +15,9 @@ const Home = () => {
 
     return (
         <div>
-           <Dashboard/>
-           <Post/>
-           <PostForm/>
+            <Dashboard />
+            <Post />
+            {post && post.map((post) => (<PostForm posts={post} />))}
         </div>
     )
 }

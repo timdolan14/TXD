@@ -4,23 +4,30 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+
 const Dashboard = () => {
+
   const user = {
     name: 'Tom Cook',
     email: 'tom@example.com',
     imageUrl:
       'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
   }
+
   const navigation = [
     { name: 'Home', path: '/', current: true },
     { name: 'Profile', path: '/profile', current: false },
-    { name: 'Notifications', path: '#', current: false },
-    { name: 'Calendar', path: '#', current: false },
+    { name: 'Notifications', path: '/notifications', current: false },
   ]
+
   const userNavigation = [
     { name: 'Your Profile', path: '/profile' },
     { name: 'Settings', href: '#' },
     { name: 'Sign out', href: '#' },
+  ]
+
+  const noti = [
+    { name: 'Notifications', path: '/notifications', current: false },
   ]
 
   function classNames(...classes) {
@@ -65,6 +72,18 @@ const Dashboard = () => {
                   </div>
                   <div className="hidden md:block">
                     <div className="ml-4 flex items-center md:ml-6">
+                      {noti.map((item) => (
+                        <Link
+                          to={item.path}
+                          className="rounded-full bg-gray-800 p-1 text-white hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                        >
+                        </Link>
+                      ))}
+                      <span className="sr-only">View notifications</span>
+                      <Link to="/notifications">
+                        <BellIcon className="text-white h-6 w-6" aria-hidden="true" />
+                      </Link>
+                      
                       {/* Profile dropdown */}
                       <Menu as="div" className="relative ml-3">
                         <div>
