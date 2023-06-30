@@ -46,7 +46,7 @@ const Login = (props) => {
 
             <div className="bg-blue-50 h-screen flex justify-center items-center">
                 {data ? (
-                    <p> Success! You may now head back to the {' '} <Link to="/">HOMEPAGE.</Link> </p>
+                    <p> Success! You may now head back to the {' '} <Link to="/home">HOMEPAGE.</Link> </p>
                 ) : (
                     <form onSubmit={handleFormSubmit} className="w-72 mx-auto mb-12">
                         <h1 className="text-6xl mb-4 text-gray-300"> Login</h1>
