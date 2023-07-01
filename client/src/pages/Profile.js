@@ -1,6 +1,4 @@
 import { useQuery } from '@apollo/client';
-import Header from "../components/Header";
-
 
 import { SINGLE_POST } from '../utils/queries';
 import Auth from '../utils/auth';
@@ -12,7 +10,6 @@ const Profile = () => {
 
     return (
         <div>
-            <Header/>
         </div>
     )
 }
