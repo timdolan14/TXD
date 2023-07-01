@@ -4,6 +4,9 @@ import { useMutation } from '@apollo/client';
 import { ADD_POST } from '../../utils/mutations';
 import { ALL_POSTS } from '../../utils/queries';
 import Auth from '../../utils/auth';
+import './style.css'
+
+
 
 const Post = () => {
   const [post, setPost] = useState('');

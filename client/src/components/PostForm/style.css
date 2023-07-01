@@ -1,0 +1,20 @@
+.form-name,
+.form-email,
+.form-message {
+    color: black;
+    font-size: 20px;
+}
+
+form {
+    padding: 2% 2% 0% 2%;
+    border: black solid;
+    border-radius: 25px;
+}
+
+form input {
+    padding-top: 10px;
+}
+
+.form-submit-btn {
+    padding-top: 10px;
+}

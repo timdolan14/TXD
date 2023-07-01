@@ -2,12 +2,13 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-import Site from './Site';
+
 import Home from "./pages/Home"
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Profile from "./pages/Profile";
-import Header from "./components/Header"
+
+import 'bootstrap/dist/css/bootstrap.css';
 
 const httpLink = createHttpLink({
     uri: '/graphql',
