@@ -27,17 +27,13 @@ export default function App() {
     return <Home />;
   };
 
-  const handlePageChange = (page) => {
-    setCurrentPage(page);
-  };
-
   return (
     <div>
       <section>
         <Header />
       </section>
       <section>
-        <NavTab currentPage={currentPage} handlePageChange={handlePageChange} />
+        <NavTab />
         {renderPage()}
       </section>
       <section>
