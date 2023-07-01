@@ -14,7 +14,7 @@ import { ALL_POSTS } from '../utils/queries';
 const Home = () => {
     const { data } = useQuery(ALL_POSTS);
     const post = data?.post || [];
-    console.log(post)
+    console.log(post);
     return (
         <div>
             <Header />

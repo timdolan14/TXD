@@ -8,7 +8,7 @@ import Profile from './pages/Profile';
 import Contact from './pages/Contact';
 import Notifications from './pages/Notifications';
 
-export default function App() {
+const App = () => {
   const [currentPage, setCurrentPage] = useState('Home');
 
   const renderPage = () => {
@@ -42,3 +42,5 @@ export default function App() {
     </div>
   );
 }
+
+export default App;
