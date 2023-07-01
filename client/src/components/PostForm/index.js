@@ -7,7 +7,6 @@ import Auth from '../../utils/auth';
 import './style.css'
 
 
-
 const Post = () => {
   const [post, setPost] = useState('');
   const [text, setText] = useState('');
@@ -57,19 +56,16 @@ const Post = () => {
       } else setErrorMessage('Thank you for the message!')
     }
   };
+  
   return (
     <div>
       {Auth.loggedIn() ? (
         <>
           <div>
-            <form className='form'>
-              <div className="form-name mb-3">
-                <label htmlFor="nameFormControlInput">Name</label>
-                <input type="text" className="form-control" id="nameFormControlInput" placeholder="Name:" />
-              </div>
+            <form className="post-form">
               <div className="form-message mb-3">
                 <label htmlFor="messageFormControlInput">Message</label>
-                <input type="text" name="text" className="form-control" id="messageFormControlInput" rows="3" onChange={handleChange}></input>
+                <input type="text" name="text" className="form-control" id="messageFormControlInput" rows="4" onChange={handleChange}></input>
               </div>
               <div className="form-submit-btn mb-3">
                 <button type="submit" className="btn btn-primary">Submit</button>

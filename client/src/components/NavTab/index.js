@@ -1,56 +1,60 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.css';
 
 
-function NavBar ({ currentPage, handlePageChange }) {
+function NavTab({ currentPage, handlePageChange }) {
   return (
-    <ul className="nav nav-pills nav-justified">
+    <div className='nav-container'>
+    <ul className="nav nav-pills nav-fill">
       <li className="nav-item">
-        <a
-          href="#Home"
+        <Link
+          to="/"
           onClick={() => handlePageChange('Home')}
           className={currentPage === 'Home' ? 'nav-link active' : 'nav-link'}
         >
           Home
-        </a>
+        </Link>
       </li>
       <li className="nav-item">
-        <a
-          href="#profile"
+        <Link
+          to="/profile"
           onClick={() => handlePageChange('Profile')}
           className={currentPage === 'Profile' ? 'nav-link active' : 'nav-link'}
         >
           Profile
-        </a>
+        </Link>
       </li>
       <li className="nav-item">
-        <a
-          href="#notifications"
+        <Link
+          to="/notifications"
           onClick={() => handlePageChange('Notifications')}
           className={currentPage === 'Notifications' ? 'nav-link active' : 'nav-link'}
         >
           Notifications
-        </a>
+        </Link>
       </li>
       <li className="nav-item">
-        <a
-          href="#contact"
+        <Link
+          to="/contact"
           onClick={() => handlePageChange('Contact')}
           className={currentPage === 'Contact' ? 'nav-link active' : 'nav-link'}
         >
           Contact Us
-        </a>
+        </Link>
       </li>
       <li className="nav-item">
-        <a
-          href="#login"
+        <Link
+          to="/login"
           onClick={() => handlePageChange('Login')}
           className={currentPage === 'Login' ? 'nav-link active' : 'nav-link'}
         >
           Log in or Sign Up
-        </a>
+        </Link>
       </li>
     </ul>
+    </div >
   );
 }
 
-export default NavBar;
+export default NavTab;

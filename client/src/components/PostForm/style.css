@@ -5,7 +5,7 @@
     font-size: 20px;
 }
 
-form {
+.post-form {
     padding: 2% 2% 0% 2%;
     border: black solid;
     border-radius: 25px;

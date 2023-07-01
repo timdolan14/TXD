@@ -6,9 +6,9 @@ import Header from './components/Header';
 import Home from './pages/Home';
 import Profile from './pages/Profile';
 import Contact from './pages/Contact';
-import Notifications from './pages/Notifications'
+import Notifications from './pages/Notifications';
 
-export default function Navtab() {
+export default function App() {
   const [currentPage, setCurrentPage] = useState('Home');
 
   const renderPage = () => {
@@ -27,14 +27,22 @@ export default function Navtab() {
     return <Home />;
   };
 
-  const handlePageChange = (page) => setCurrentPage(page);
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
 
   return (
     <div>
-      <section><Header></Header></section>
-      <section> <NavTab currentPage={currentPage} handlePageChange={handlePageChange} />
-        {renderPage()}</section>
-      <section><Footer></Footer></section>
+      <section>
+        <Header />
+      </section>
+      <section>
+        <NavTab currentPage={currentPage} handlePageChange={handlePageChange} />
+        {renderPage()}
+      </section>
+      <section>
+        <Footer />
+      </section>
     </div>
   );
 }

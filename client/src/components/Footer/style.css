@@ -2,7 +2,7 @@ footer {
     margin-top: 10%;
 }
 
-.footer p {
+.footer {
     display: flex;
     flex-direction: row;
     font-size: 20px;
