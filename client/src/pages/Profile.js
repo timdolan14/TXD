@@ -1,22 +1,28 @@
 import { useQuery } from '@apollo/client';
+import { GET_POSTS_BY_AUTHOR } from '../utils/queries';
 
-import { SINGLE_POST } from '../utils/queries';
-
-import Auth from '../utils/auth';
+import { useParams } from 'react-router-dom';
 
 import Header from '../components/Header';
 import NavTab from '../components/NavTab';
+import ProfilePage from '../components/ProfilePage';
 
 const Profile = () => {
-
-    const { loading, data } = useQuery(SINGLE_POST);
-    const memory = data?.memory || [];
+    const { postAuthor } = useParams();
+    const { data } = useQuery(GET_POSTS_BY_AUTHOR, {
+        variables: { postAuthor: postAuthor },
+      });
+      const posts = data?.posts || [];
+    console.log(postAuthor);
 
     return (
         <div>
             <Header />
             <NavTab />
-            <h2>Profile!</h2>
+            <ProfilePage
+              posts={posts}
+              title="Your Posts"
+               />
         </div>
     )
 }

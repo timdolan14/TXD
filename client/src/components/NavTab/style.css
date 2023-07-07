@@ -4,8 +4,13 @@
   }
   
   .nav-pills .nav-link {
-    color: #00796B;
+    color: black;
     font-weight: bold;
+  }
+
+  .nav-pills:hover .nav-link:hover {
+    background-color: #536878;
+    color: white;
   }
   
   .logout-btn {

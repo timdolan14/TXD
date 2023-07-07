@@ -9,7 +9,7 @@ import Register from "./pages/Register";
 import Profile from "./pages/Profile";
 import Notifications from "./pages/Notifications";
 import Contact from "./pages/Contact"
-import NavTab from "./components/NavTab";
+
 
 import Footer from "./components/Footer";
 
@@ -44,7 +44,7 @@ function App() {
                     <Route path="/home" element={<Home />} />
                     <Route path="/register" element={<Register />} />
                     <Route path="/login" element={<Login />} />
-                    <Route path="/profile" element={<Profile />} />
+                    <Route path="/profile/:postAuthor" element={<Profile />} />
                     <Route path="/notifications" element={<Notifications />} />
                     <Route path="/contact" element={<Contact />} />
                 </Routes>

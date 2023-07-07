@@ -1,9 +1,41 @@
-footer {
-    margin-top: 10%;
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f1f1f1;
 }
 
-.footer {
+.footer p {
+    margin: 0;
+}
+
+.footer ul {
     display: flex;
-    flex-direction: row;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer p {
     font-size: 20px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+.footer ul a {
+    color: #000;
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+.footer ul a:hover {
+    color: #536878;
+}
+
+.footer .icons-container {
+    display: flex;
 }

@@ -1,5 +1,6 @@
 import Header from '../components/Header';
 import NavTab from '../components/NavTab';
+import ContactPage from '../components/ContactUs';
 
 
 
@@ -10,7 +11,7 @@ const Contact = () => {
         <div>
             <Header />
             <NavTab />
-            <h2>Contact Us!</h2>
+            <ContactPage />
         </div>
     )
 }

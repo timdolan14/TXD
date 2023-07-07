@@ -34,3 +34,14 @@ query Query($postId: ID!) {
   }
 }
 `
+
+export const GET_POSTS_BY_AUTHOR = gql`
+query GET_POSTS_BY_AUTHOR($postAuthor: String!) {
+  posts(postAuthor: $postAuthor) {
+    _id
+    postText
+    postAuthor
+    createdAt
+  }
+}
+`;

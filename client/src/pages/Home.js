@@ -6,10 +6,8 @@ import PostForm from "../components/PostForm";
 import PostList from "../components/PostList";
 import Header from "../components/Header";
 
-
 import { ALL_POSTS } from '../utils/queries';
 
-// import { useState } from 'react';
 
 const Home = () => {
     const { data } = useQuery(ALL_POSTS);
