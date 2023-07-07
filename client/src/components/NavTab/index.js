@@ -1,9 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 import Auth from '../../utils/auth';
-
+import './style.css';
 
 function NavTab() {
   const logout = (event) => {
@@ -12,57 +11,47 @@ function NavTab() {
   };
 
   return (
-    <div className='nav-container'>
+    <div className="nav-container">
       <ul className="nav nav-pills nav-fill">
         <li className="nav-item">
-          <Link
-            to="/"
-          >
-            Home
-          </Link>
+          <Link to="/" className="nav-link">Home</Link>
         </li>
         <li className="nav-item">
-          <Link
-            to="/profile"
-          >
-            Profile
-          </Link>
+        <div>
+            {Auth.loggedIn() ? (
+              <>
+               <Link to="/profile" className="nav-link"> {Auth.getProfile().data.username}</Link>
+              </>
+            ) : (
+              <>
+                <Link to="/profile" className="nav-link">Profile</Link>
+              </>
+            )}
+          </div>
         </li>
         <li className="nav-item">
-          <Link
-            to="/notifications"
-          >
-            Notifications
-          </Link>
+          <Link to="/notifications" className="nav-link">Notifications</Link>
         </li>
         <li className="nav-item">
-          <Link
-            to="/contact"
-          >
-            Contact Us
-          </Link>
+          <Link to="/contact" className="nav-link">Contact Us</Link>
         </li>
-
         <li className="nav-item">
           <div>
             {Auth.loggedIn() ? (
               <>
-                <button className="nav-item" onClick={logout}>Hey there, {Auth.getProfile().data.username}!</button>
+                <button className="nav-item logout-btn" onClick={logout}>
+                  Logout
+                </button>
               </>
             ) : (
               <>
-                <Link
-                  to="/login"
-                >
-                  Log in or Sign Up
-                </Link>
+                <Link to="/login" className="nav-link">Log in or Sign Up</Link>
               </>
             )}
           </div>
-
         </li>
       </ul>
-    </div >
+    </div>
   );
 }
 

@@ -10,7 +10,7 @@ const PostList = ({ posts }) => {
     <div className="post-list">
       {Auth.loggedIn() ? (
         <>
-          <h3 className="post-list-heading">How Does Your Area Look?</h3>
+          <h3 className="post-list-heading">What's Going On in Your Area?</h3>
           {posts && posts.map((post) => (
             <div key={post._id} className="card mb-3 post-card">
               <h4 className="card-header text-light p-2 m-0 post-author">

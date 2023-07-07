@@ -1,0 +1,19 @@
+.nav-container {
+    background-color: #ffffff;
+    padding: 10px;
+  }
+  
+  .nav-pills .nav-link {
+    color: #00796B;
+    font-weight: bold;
+  }
+  
+  .logout-btn {
+    background-color: black;
+    color: #ffffff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
