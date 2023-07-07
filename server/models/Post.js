@@ -3,7 +3,7 @@ const dateFormat = require('../utils/dateFormat');
 
 const postSchema = new Schema(
     {
-        post: {
+        postText: {
             type: String,
             required: true
         },

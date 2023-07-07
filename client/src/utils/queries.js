@@ -6,9 +6,9 @@ query GET_USER($username: String!) {
     _id
     username
     email
-    post {
+    posts {
       _id
-      post
+      postText
       createdAt
     }
   }
@@ -18,7 +18,7 @@ export const ALL_POSTS = gql`
 query GET_POSTS {
   posts {
     _id
-    post
+    postText
     postAuthor
     createdAt
   }
@@ -28,7 +28,7 @@ export const SINGLE_POST = gql`
 query Query($postId: ID!) {
   post(postId: $postId) {
     _id
-    post
+    postText
     postAuthor
     createdAt
   }

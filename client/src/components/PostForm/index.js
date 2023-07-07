@@ -7,37 +7,36 @@ import Auth from '../../utils/auth';
 import './style.css'
 
 
-const Post = () => {
-  const [post, setPost] = useState('');
-  const [text, setText] = useState('');
+const PostForm = () => {
+  const [postText, setPostText] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
-  const [addPost] = useMutation(ADD_POST, {
+  const [addPost, { error }] = useMutation(ADD_POST, {
     update(cache, { data: { addPost } }) {
       try {
-        const { post: posts } = cache.readQuery({ query: ALL_POSTS });
+        const { posts } = cache.readQuery({ query: ALL_POSTS });
 
         cache.writeQuery({
           query: ALL_POSTS,
-          data: { post: [addPost, ...post] },
+          data: { posts: [addPost, ...posts] },
         });
       } catch (e) {
         console.error(e);
       }
     },
   });
-
+  
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     try {
       const { data } = await addPost({
         variables: {
-          post: post,
+          postText,
           postAuthor: Auth.getProfile().data.username,
         },
       });
 
-      setPost('');
+      setPostText('');
     } catch (err) {
       console.error(err);
     }
@@ -45,15 +44,8 @@ const Post = () => {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    const { target } = event;
-    const inputType = target.name;
-    const inputValue = target.value;
-  
-    if (inputType === 'text') {
-      if (inputValue === '') {
-        setErrorMessage('Message is required!')
-        return setText(inputValue);
-      } else setErrorMessage('Thank you for the message!')
+    if (name === 'postText') {
+      setPostText(value);
     }
   };
   
@@ -62,10 +54,10 @@ const Post = () => {
       {Auth.loggedIn() ? (
         <>
           <div>
-            <form className="post-form">
+            <form className="post-form" onSubmit={handleFormSubmit}>
               <div className="form-message mb-3">
                 <label htmlFor="messageFormControlInput">Message</label>
-                <input type="text" name="text" className="form-control" id="messageFormControlInput" rows="4" onChange={handleChange}></input>
+                <textarea type="text" name="postText" className="form-control" id="messageFormControlInput" rows="4" value={postText} onChange={handleChange}></textarea>
               </div>
               <div className="form-submit-btn mb-3">
                 <button type="submit" className="btn btn-primary">Submit</button>
@@ -87,4 +79,4 @@ const Post = () => {
   );
 };
 
-export default Post;
+export default PostForm;

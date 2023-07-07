@@ -6,12 +6,12 @@ type User {
   username: String
   password: String
   email: String
-  post:[Post]!
+  posts:[Post]!
 }
 
 type Post {
     _id: ID
-    post: String
+    postText: String
     postAuthor: String
     likes: Boolean
     createdAt: String
@@ -37,13 +37,12 @@ type Post {
     posts(username: String): [Post]
     post(postId: ID!): Post
     postTag(tag: String): [Post]
-    Post(PostId: ID!): Post
   }
 
   type Mutation {
     addUser(email: String! username: String!, password: String!): Auth
     login(username: String!, password: String!): Auth
-    addPost(post: String!, postAuthor: String!): Post
+    addPost(postText: String!, postAuthor: String!): Post
   }
 `;
 

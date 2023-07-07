@@ -1,17 +1,16 @@
 import React from 'react';
 import Auth from '../../utils/auth';
 
-const PostList = ({ posts }) => {
+const postList = ({ posts }) => {
   if (!posts) {
     return <h3>No Posts Yet</h3>;
   }
-
   return (
     <div>
       {Auth.loggedIn() ? (
         <>
           <h3>How Does Your Area Look?</h3>
-          {posts.map((post) => (
+          {posts && posts.map((post) => (
             <div key={post._id} className="card mb-3">
               <h4 className="card-header bg-primary text-light p-2 m-0">
                 {post.postAuthor} <br />
@@ -19,7 +18,7 @@ const PostList = ({ posts }) => {
                   Posted at {post.createdAt}
                 </span>
               </h4>
-              <p className="card-body bg-light p-2">{post.post}</p>
+              <p className="card-body bg-light p-2">{post.postText}</p>
             </div>
           ))}
         </>
@@ -28,4 +27,4 @@ const PostList = ({ posts }) => {
   );
 };
 
-export default PostList;
+export default postList;

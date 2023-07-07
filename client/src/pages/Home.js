@@ -13,15 +13,15 @@ import { ALL_POSTS } from '../utils/queries';
 
 const Home = () => {
     const { data } = useQuery(ALL_POSTS);
-    const post = data?.post || [];
-    console.log(post);
+    const posts = data?.posts || [];
+    console.log(posts);
     return (
         <div>
             <Header />
             <NavTab />
             <PostForm />
             <PostList
-              post={post}
+              posts={posts}
               title="Check this out!"
             />
         </div>

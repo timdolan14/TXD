@@ -24,10 +24,10 @@ mutation LOGIN_USER($username: String!, $password: String!) {
 `
 
 export const ADD_POST = gql `
-mutation NEW_POST($post: String!, $postAuthor: String!) {
-  addPost(post: $post, postAuthor: $postAuthor) {
+mutation NEW_POST($postText: String!, $postAuthor: String!) {
+  addPost(postText: $postText, postAuthor: $postAuthor) {
     _id
-    post
+    postText
     postAuthor
     createdAt
   }
