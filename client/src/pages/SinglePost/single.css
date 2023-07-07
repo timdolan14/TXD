@@ -1,0 +1,35 @@
+.my-3 {
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: #536878;
+}
+
+.card-header h3 {
+  margin: 0;
+  padding: 10px;
+}
+
+.bg-light {
+  background-color: #f4f4f4;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.blockquote {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+span {
+  color: black;
+}

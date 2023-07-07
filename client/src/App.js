@@ -1,4 +1,5 @@
 import React from "react";
+import 'bootstrap/dist/css/bootstrap.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
@@ -8,12 +9,13 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Profile from "./pages/Profile";
 import Notifications from "./pages/Notifications";
-import Contact from "./pages/Contact"
+import Contact from "./pages/Contact";
+import SinglePost from "./pages/SinglePost/Singlepost";
+
+
 
 
 import Footer from "./components/Footer";
-
-import 'bootstrap/dist/css/bootstrap.css';
 
 
 const httpLink = createHttpLink({
@@ -47,6 +49,8 @@ function App() {
                     <Route path="/profile/:postAuthor" element={<Profile />} />
                     <Route path="/notifications" element={<Notifications />} />
                     <Route path="/contact" element={<Contact />} />
+                    <Route path="/post/:postId" element={<SinglePost />}
+                    />
                 </Routes>
                 <Footer />
             </Router>

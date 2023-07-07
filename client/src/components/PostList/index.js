@@ -1,5 +1,6 @@
 import React from 'react';
 import Auth from '../../utils/auth';
+import { Link } from 'react-router-dom';
 import './style.css';
 
 const PostList = ({ posts }) => {
@@ -20,12 +21,18 @@ const PostList = ({ posts }) => {
                 </span>
               </h4>
               <p className="card-body bg-light p-2 post-text">{post.postText}</p>
+              <Link
+                className="btn btn-primary btn-block btn-squared"
+                to={`/post/${post._id}`}>
+                View Post
+              </Link>
             </div>
           ))}
         </>
       ) : null}
     </div>
   );
+  
 };
 
 export default PostList;
