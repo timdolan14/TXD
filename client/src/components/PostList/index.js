@@ -1,24 +1,25 @@
 import React from 'react';
 import Auth from '../../utils/auth';
+import './style.css';
 
-const postList = ({ posts }) => {
+const PostList = ({ posts }) => {
   if (!posts) {
     return <h3>No Posts Yet</h3>;
   }
   return (
-    <div>
+    <div className="post-list">
       {Auth.loggedIn() ? (
         <>
-          <h3>How Does Your Area Look?</h3>
+          <h3 className="post-list-heading">How Does Your Area Look?</h3>
           {posts && posts.map((post) => (
-            <div key={post._id} className="card mb-3">
-              <h4 className="card-header bg-primary text-light p-2 m-0">
+            <div key={post._id} className="card mb-3 post-card">
+              <h4 className="card-header text-light p-2 m-0 post-author">
                 {post.postAuthor} <br />
-                <span style={{ fontSize: '1rem' }}>
+                <span className="post-date">
                   Posted at {post.createdAt}
                 </span>
               </h4>
-              <p className="card-body bg-light p-2">{post.postText}</p>
+              <p className="card-body bg-light p-2 post-text">{post.postText}</p>
             </div>
           ))}
         </>
@@ -27,4 +28,4 @@ const postList = ({ posts }) => {
   );
 };
 
-export default postList;
+export default PostList;
