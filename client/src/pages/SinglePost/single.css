@@ -1,12 +1,22 @@
-.my-3 {
+
+.post-container {
   border-radius: 10px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.card-header {
+.single-thought {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.post-header {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  background-color: #536878;
+  background-color: rgb(171, 169, 169);
+  width: 40%;
+  font-size: 25px;
 }
 
 .card-header h3 {
@@ -14,8 +24,13 @@
   padding: 10px;
 }
 
-.bg-light {
-  background-color: #f4f4f4;
+.single-post-text {
+  background-color: #536878;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  font-size: 30px;
+  color: white;
+  width: 40%;
 }
 
 .py-4 {
@@ -23,13 +38,7 @@
   padding-bottom: 1rem;
 }
 
-.blockquote {
-  margin: 0;
-  padding: 0;
-  font-size: 1rem;
-  font-weight: 400;
-}
-
 span {
   color: black;
+  font-size: 20px;
 }

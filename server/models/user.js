@@ -23,7 +23,6 @@ const userSchema = new Schema(
       unique: true,
       minlength: 2,
     },
-
     posts: [{
       type: Schema.Types.ObjectId,
       ref: `Post`,

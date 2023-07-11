@@ -13,13 +13,11 @@ const postSchema = new Schema(
             required: true,
             trim: true
         },
-
         createdAt: {
             type: Date,
             default: Date.now,
             get: (timestamp) => dateFormat(timestamp)
         },
-
         likes: {
             type: Boolean,
             default: 0,

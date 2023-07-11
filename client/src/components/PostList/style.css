@@ -1,5 +1,6 @@
 .post-list {
-    margin-top: 20px;
+    margin: 0 auto;
+    max-width: 1250px;
   }
 
   .post-list-heading {
@@ -8,6 +9,7 @@
     color: black;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
+    margin-top: 10px;
   }
   
   .post-card {

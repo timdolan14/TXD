@@ -34,7 +34,7 @@ type Post {
   type Query {
     users: [User]
     user(username: String!): User
-    posts(postAuthor: String): [Post]
+    posts(username: String): [Post]
     post(postId: ID!): Post
     postTag(tag: String): [Post]
   }
