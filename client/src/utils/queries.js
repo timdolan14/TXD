@@ -31,6 +31,11 @@ query Query($postId: ID!) {
     postText
     postAuthor
     createdAt
+    comments {
+      _id
+      commentText
+      createdAt
+    }
   }
 }
 `

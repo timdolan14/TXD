@@ -21,7 +21,7 @@ type Post {
 
   type Comment {
     _id: ID
-    comment: String
+    commentText: String
     commentAuthor: String
     createdAt: String
   }
@@ -34,7 +34,7 @@ type Post {
   type Query {
     users: [User]
     user(username: String!): User
-    posts(username: String): [Post]
+    posts(postAuthor: String): [Post]
     post(postId: ID!): Post
     postTag(tag: String): [Post]
   }
@@ -43,6 +43,12 @@ type Post {
     addUser(email: String! username: String!, password: String!): Auth
     login(username: String!, password: String!): Auth
     addPost(postText: String!, postAuthor: String!): Post
+    addComment(
+      postId: ID!
+      commentText: String!
+      commentAuthor: String!
+    ): Post
+    removeComment(postId: ID!, commentId: ID!): Post
   }
 `;
 

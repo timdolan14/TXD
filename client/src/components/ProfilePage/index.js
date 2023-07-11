@@ -9,7 +9,7 @@ import { GET_POSTS_BY_AUTHOR } from '../../utils/queries';
 const ProfilePage = () => {
   const { postAuthor } = useParams();
   const { loading, data } = useQuery(GET_POSTS_BY_AUTHOR, {
-    variables: { postAuthor: postAuthor },
+    variables: { postAuthor },
   });
   
   const posts = data?.posts || [];

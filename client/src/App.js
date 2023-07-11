@@ -13,8 +13,6 @@ import Contact from "./pages/Contact";
 import SinglePost from "./pages/SinglePost/Singlepost";
 
 
-
-
 import Footer from "./components/Footer";
 
 
@@ -46,7 +44,7 @@ function App() {
                     <Route path="/home" element={<Home />} />
                     <Route path="/register" element={<Register />} />
                     <Route path="/login" element={<Login />} />
-                    <Route path="/profile/:postAuthor" element={<Profile />} />
+                    <Route path="/profile/:userId" element={<Profile />} />
                     <Route path="/notifications" element={<Notifications />} />
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/post/:postId" element={<SinglePost />}

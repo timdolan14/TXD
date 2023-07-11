@@ -23,13 +23,41 @@ mutation LOGIN_USER($username: String!, $password: String!) {
 }
 `
 
-export const ADD_POST = gql `
-mutation NEW_POST($postText: String!, $postAuthor: String!) {
+export const ADD_POST = gql`
+mutation ADD_POST($postText: String!, $postAuthor: String!) {
   addPost(postText: $postText, postAuthor: $postAuthor) {
     _id
     postText
     postAuthor
     createdAt
+    comments {
+      _id
+      commentText
+    }
   }
 }
 `
+
+export const ADD_COMMENT = gql`
+  mutation addComment(
+    $postId: ID!
+    $commentText: String!
+    $commentAuthor: String!
+  ) {
+    addComment(
+      postId: $postId
+      commentText: $commentText
+      commentAuthor: $commentAuthor
+    ) {
+      _id
+      postText
+      postAuthor
+      createdAt
+      comments {
+        _id
+        commentText
+        createdAt
+      }
+    }
+  }
+`;

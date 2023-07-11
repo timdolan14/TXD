@@ -5,12 +5,13 @@ const postSchema = new Schema(
     {
         postText: {
             type: String,
-            required: true
+            required: true,
+            trim: true
         },
         postAuthor: {
             type: String,
             required: true,
-            trim: true,
+            trim: true
         },
 
         createdAt: {
@@ -22,31 +23,25 @@ const postSchema = new Schema(
         likes: {
             type: Boolean,
             default: 0,
-
         },
-
         tag: [{
             type: String,
         }],
         comments: [
             {
-                comment: {
+                commentText: {
                     type: String,
                     required: true,
-                    minlength: 1,
-                    maxlength: 30,
-
+                },
+                commentAuthor: {
+                    type: String,
+                    required: true,
                 },
                 createdAt: {
                     type: Date,
                     default: Date.now,
                     get: (timestamp) => dateFormat(timestamp)
                 },
-                commentAuthor: {
-                    type: String,
-                    ref: `User`,
-                    required: true,
-                }
             }
         ]
 

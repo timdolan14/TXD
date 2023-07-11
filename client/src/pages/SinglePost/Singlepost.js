@@ -2,12 +2,14 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
+import CommentList from '../../components/CommentList';
+import CommentForm from '../../components/CommentForm';
+
 import { SINGLE_POST } from '../../utils/queries';
 
 import './single.css'
 
 const SinglePost = () => {
-
     const { postId } = useParams();
     const { loading, data } = useQuery(SINGLE_POST, {
         variables: { postId: postId },
@@ -32,6 +34,12 @@ const SinglePost = () => {
                 >
                     {post.postText}
                 </blockquote>
+            </div>
+            <div className="my-5">
+                <CommentList comments={post.comments} />
+            </div>
+            <div className="m-3 p-4" style={{ border: '1px dotted #1a1a1a' }}>
+                <CommentForm postId={post._id} />
             </div>
         </div>
     );

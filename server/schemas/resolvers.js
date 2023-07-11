@@ -11,8 +11,8 @@ const resolvers = {
         user: async (parent, { username }) => {
             return User.findOne({ username }).populate('posts');
         },
-        posts: async (parent, { username }) => {
-            const params = username ? { username } : {};
+        posts: async (parent, { postAuthor }) => {
+            const params = postAuthor ? { postAuthor } : {};
             return Post.find(params).sort({ createdAt: -1 });
         },
         post: async (parent, { postId }) => {
@@ -40,15 +40,33 @@ const resolvers = {
         },
         addPost: async (parent, { postText, postAuthor }) => {
             const newPost = await Post.create({ postText, postAuthor });
-      
-            await User.findOneAndUpdate(
-              { username: postAuthor },
-              { $addToSet: { posts: newPost._id } }
-            );
-      
-            return newPost;
-          },
 
+            await User.findOneAndUpdate(
+                { username: postAuthor },
+                { $addToSet: { posts: newPost._id } }
+            );
+
+            return newPost;
+        },
+        addComment: async (parent, { postId, commentText, commentAuthor }) => {
+            return Post.findOneAndUpdate(
+                { _id: postId },
+                {
+                    $addToSet: { comments: { commentText, commentAuthor } },
+                },
+                {
+                    new: true,
+                    runValidators: true,
+                }
+            );
+        },
+        // removeComment: async (parent, { postId, commentId }) => {
+        //     return Post.findOneAndUpdate(
+        //         { _id: postId },
+        //         { $pull: { comments: { _id: commentId } } },
+        //         { new: true }
+        //     );
+        // },
     }
 };
 

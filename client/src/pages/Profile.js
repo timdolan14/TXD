@@ -1,7 +1,7 @@
+import React from 'react';
+import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { GET_POSTS_BY_AUTHOR } from '../utils/queries';
-
-import { useParams } from 'react-router-dom';
 
 import Header from '../components/Header';
 import NavTab from '../components/NavTab';

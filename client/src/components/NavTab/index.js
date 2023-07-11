@@ -20,11 +20,11 @@ function NavTab() {
         <div>
             {Auth.loggedIn() ? (
               <>
-               <Link to="/profile/:postAuthor" className="nav-link"> {Auth.getProfile().data.username}</Link>
+               <Link to="/profile/:userId" className="nav-link"> {Auth.getProfile().data.username}</Link>
               </>
             ) : (
               <>
-                <Link to="/profile/:postAuthor" className="nav-link">Profile</Link>
+                <Link to="/profile/:userId" className="nav-link">Profile</Link>
               </>
             )}
           </div>
