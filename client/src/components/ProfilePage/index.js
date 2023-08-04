@@ -9,10 +9,10 @@ import { GET_POSTS_BY_AUTHOR } from '../../utils/queries';
 const ProfilePage = () => {
   const { postAuthor } = useParams();
   const { loading, data } = useQuery(GET_POSTS_BY_AUTHOR, {
-    variables: { postAuthor },
+    variables: { username: postAuthor },
   });
   
-  const posts = data?.posts || [];
+  const posts = data?.user?.posts || [];
 
   if (loading) {
     return <p>Loading...</p>;
@@ -36,7 +36,7 @@ const ProfilePage = () => {
           ))}
         </>
       ) : (
-        <p>
+        <p className='profile-login'>
           You need to be logged in to view your posts. Please <Link to="/login">Login</Link> or <Link to="/register">Sign Up.</Link>
         </p>
       )}

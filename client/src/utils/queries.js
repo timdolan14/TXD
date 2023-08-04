@@ -41,12 +41,21 @@ query Query($postId: ID!) {
 `
 
 export const GET_POSTS_BY_AUTHOR = gql`
-query GET_POSTS_BY_AUTHOR($postAuthor: String!) {
-  posts(postAuthor: $postAuthor) {
+query GET_POSTS_BY_AUTHOR($username: String!) {
+  user(username: $username) {
     _id
-    postText
-    postAuthor
-    createdAt
+    username
+    posts {
+      _id
+      postText
+      postAuthor
+      comments {
+        _id
+        commentText
+        commentAuthor
+        createdAt
+      }
+    }
   }
 }
 `;

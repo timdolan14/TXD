@@ -10,9 +10,9 @@ const ContactPage = () => {
       photo: 'founder1.jpg',
     },
     {
-      name: 'David McGuinness',
+      name: 'Devon McGuinness',
       phone: '987-654-3210',
-      email: 'dave@example.com',
+      email: 'dev@example.com',
       photo: 'founder2.jpg',
     },
   ];
@@ -23,7 +23,7 @@ const ContactPage = () => {
       <div className="founders-container">
         {founders.map((founder, index) => (
           <div key={index} className="founder-card">
-            <img src={founder.photo} alt={`Founder ${index + 1}`} className="founder-photo" />
+            <img src={founder.photo} alt={`Photo ${index + 1}`} className="founder-photo" />
             <h3 className="founder-name">{founder.name}</h3>
             <p className="founder-info">Phone: {founder.phone}</p>
             <p className="founder-info">Email: {founder.email}</p>

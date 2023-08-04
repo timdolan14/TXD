@@ -71,7 +71,7 @@ const PostForm = () => {
           </div>
         </>
       ) : (
-        <p>
+        <p className='post-login'>
           You need to be logged in to share your posts. Please <Link to="/login">Login</Link> or <Link to="/register">Sign Up.</Link>
         </p>
       )}
