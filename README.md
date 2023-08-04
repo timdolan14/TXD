@@ -1,8 +1,5 @@
 # TXD
 
-## Deployed Link
-https://txd-74be239d79ad.herokuapp.com/
-
 ## GitHub Repo
 https://github.com/timdolan14/TXD
 
