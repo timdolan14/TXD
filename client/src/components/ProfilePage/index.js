@@ -3,19 +3,24 @@ import Auth from '../../utils/auth';
 import './style.css';
 import { Link } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
-import { useParams } from 'react-router-dom';
 import { GET_POSTS_BY_AUTHOR } from '../../utils/queries';
 
 const ProfilePage = () => {
-  const { postAuthor } = useParams();
-  const { loading, data } = useQuery(GET_POSTS_BY_AUTHOR, {
-    variables: { username: postAuthor },
+
+  const loggedInUser = Auth.getProfile().data.username;
+  const { loading, error, data } = useQuery(GET_POSTS_BY_AUTHOR, {
+    variables: { username: loggedInUser },
   });
-  
+
   const posts = data?.user?.posts || [];
 
   if (loading) {
     return <p>Loading...</p>;
+  }
+
+  if (error) {
+    console.error(error);
+    return <p>Error loading posts.</p>;
   }
 
   return (
@@ -34,6 +39,14 @@ const ProfilePage = () => {
               <p className="card-body bg-light p-2 post-text">{post.postText}</p>
             </div>
           ))}
+          {/* Additional elements for the profile page */}
+          <div className="profile-info">
+            <h2>{loggedInUser}</h2>
+            {/* Future Styling */}
+          </div>
+          <div className="post-form-container">
+            {/* Future Styling */}
+          </div>
         </>
       ) : (
         <p className='profile-login'>
