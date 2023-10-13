@@ -14,7 +14,7 @@ const CommentList = ({ comments = [] }) => {
           <div key={comment._id} className="comment-card">
             <div className="comment-header">
               <h5>
-                {comment.commentAuthor} "Username" {' '}
+                {comment.commentAuthor} commented {' '}
                 <span>{comment.createdAt}</span>
               </h5>
             </div>

@@ -37,11 +37,15 @@ const ProfilePage = () => {
                 </span>
               </h4>
               <p className="card-body bg-light p-2 post-text">{post.postText}</p>
+              <Link
+                className="btn btn-primary btn-block btn-squared"
+                to={`/post/${post._id}`}>
+                View Post
+              </Link>
             </div>
           ))}
           {/* Additional elements for the profile page */}
           <div className="profile-info">
-            <h2>{loggedInUser}</h2>
             {/* Future Styling */}
           </div>
           <div className="post-form-container">

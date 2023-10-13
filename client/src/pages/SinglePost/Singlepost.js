@@ -22,7 +22,7 @@ const SinglePost = () => {
   }
   return (
     <div className="post-container my-3">
-      <div className ="single-thought">
+      <div className ="single-post">
       <h3 className="post-header text-light p-2 m-0">
         {post.postAuthor} <br />
         <span>Posted at {post.createdAt}</span>

@@ -34,6 +34,7 @@ query Query($postId: ID!) {
     comments {
       _id
       commentText
+      commentAuthor
       createdAt
     }
   }
@@ -49,6 +50,7 @@ query GET_POSTS_BY_AUTHOR($username: String!) {
       _id
       postText
       postAuthor
+      createdAt
       comments {
         _id
         commentText

@@ -44,7 +44,7 @@ function App() {
                     <Route path="/home" element={<Home />} />
                     <Route path="/register" element={<Register />} />
                     <Route path="/login" element={<Login />} />
-                    <Route path="/profile/postAuthor" element={<Profile />} />
+                    <Route path="/:username" element={<Profile />} />
                     <Route path="/notifications" element={<Notifications />} />
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/post/:postId" element={<SinglePost />}
